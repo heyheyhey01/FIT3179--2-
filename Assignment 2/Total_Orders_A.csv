@@ -1,12 +1,4 @@
-Consumer,1668
-Furniture,352
-Office Supplies,1021
-Technology,295
-Corporate,980
-Furniture,198
-Office Supplies,591
-Technology,191
-Home Office,662
-Furniture,135
-Office Supplies,389
-Technology,138
+,Furniture,Office Supplies,Technology,Grand Total
+Consumer,352,1020,295,1667
+Corporate,198,590,191,979
+Home Office,136,390,138,664

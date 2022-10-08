@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 150,
+  "title": {"text": "Orders by Customer Segment (2020)", "fontSize": 18},
+  "data": {
+    "url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/Total_Orders_B.csv"
+  },
+  "params": [
+    {
+      "name": "Category_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "Furniture", "Office Supplies", "Technology"],
+        "labels": ["Show All", "Furniture", "Office Supplies", "Technology"],
+        "name": "Product Selection"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "Category_selection == null || datum.Category == Category_selection"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "bar"},
+      "encoding": {
+        "y": {
+          "field": "Segment",
+          "type": "ordinal",
+          "title": "Segment",
+          "axis": {"labelAngle": 0}
+        },
+        "x": {
+          "aggregate": "count",
+          "axis": {"tickCount": 10, "title": "Orders"}
+        },
+        "color": {
+          "field": "Category",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Furniture", "Office Supplies", "Technology"],
+            "range": ["#D6523C", "#F3E7C3", "#24769F"]
+          },
+          "title": "Product Category"
+        },
+        "tooltip": [
+          {"field": "Segment", "type": "ordinal", "title": "Customer segment"},
+          {"field": "Category", "type": "nominal", "title": "Product category"},
+          {
+            "aggregate": "count",
+            "field": "Category",
+            "type": "quantitative",
+            "title": "Total Orders"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 5},
+      "encoding": {
+        "x": {
+          "aggregate": "count",
+          "field": "Category",
+          "type": "quantitative",
+          "stack": "zero"
+        },
+        "y": {"field": "Segment", "type": "nominal"},
+        "color": {
+          "type": "nominal",
+          "scale": {"range": ["white"]},
+          "legend": null
+        },
+        "text": {
+          "aggregate": "count",
+          "field": "Category",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "config": {}
+}

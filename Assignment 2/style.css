@@ -1,3 +1,11 @@
 .pure-u-1-2 {
-    margin: 25px 50px 75px 100px;
+    margin:auto;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.pure-u-2-3 {
+    margin: auto;
+    padding-bottom: 50px;
+    padding-top: 50px;
 }

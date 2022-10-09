@@ -62,7 +62,7 @@
             "field": "Orders per 100,000 population",
             "type": "quantitative",
             "format": ".2f",
-            "title": "Total Orders per 100,000 population"
+            "title": "Total Orders per 100,000 population (per year)"
           }
         ]
       }

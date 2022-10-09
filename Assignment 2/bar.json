@@ -52,7 +52,7 @@
             "aggregate": "count",
             "field": "Category",
             "type": "quantitative",
-            "title": "Total Orders"
+            "title": "Total orders per year"
           }
         ]
       }

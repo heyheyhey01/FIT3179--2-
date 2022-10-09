@@ -3,15 +3,7 @@ body *{
 }
 
 body {
-    background-color: lightgray;
-}
-
-.page {
-    width: 900px;
     background-color: white;
-    margin: auto;
-    padding: 10px;
-    padding-top: 25px;
 }
 
 .vis-container {

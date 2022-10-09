@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "United State E-commerce Record (2020)", "fontSize": 16},
-  "width": 700,
-  "height": 400,
+  "width": 500,
+  "height": 300,
   "background": "azure",
   "projection": {"type": "albersUsa"},
   "data": {
@@ -62,7 +62,7 @@
             "field": "Orders per 100,000 population",
             "type": "quantitative",
             "format": ".2f",
-            "title": "Total Orders per 100,000 population (per year)"
+            "title": "Total Orders per 100,000 population"
           }
         ]
       }

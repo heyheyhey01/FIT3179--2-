@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Multiple Visualisations</title>
+  <title>120 years of Nobel Prize | An Example</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -28,18 +28,17 @@
 
   <div class="page">
 
-    <!-- pure grid group --<div class="pure-g">
+    <!-- pure grid group <div class="pure-g">
       <div class="pure-u-1-1">
-        <h1>Multiple Visualisations</h1>
+        <h1>Multiple visualisations</h1>
       </div>
-    </div>>
+    </div>-->
     
     <!-- end pure grid group -->
 
     <!-- pure grid group -->
+    <h1>120 years of Nobel Prize</h1>
     <div class="pure-g">
-      <div class="pure-u-1-2">
-      </div>
       <div class="pure-u-1-2">
         <div id="vis1" class="vis-container"></div>
       </div>
@@ -57,8 +56,8 @@
     </div>
 
   <script type="text/javascript">
-    var specVis1 = "./map.json";
-    var specVis2 = "./bar.json";
+    var specVis1 = "./nobel_map.vl.json";
+    var specVis2 = "./nobel_stackedbar.vl.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view

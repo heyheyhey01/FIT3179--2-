@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "United State E-commerce Record (2020)", "fontSize": 16},
-  "width": 500,
-  "height": 300,
-  "background": "azure",
+  "title": {"text": "United State E-commerce Record by State (2020)", "fontSize": 16},
+  "width": 750,
+  "height": 400,
+  "background": "white",
   "projection": {"type": "albersUsa"},
   "data": {
     "url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/ne_110m_admin_1_states_provinces%20(1).json",
@@ -68,5 +68,9 @@
       }
     }
   ],
-  "config": {}
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
 }

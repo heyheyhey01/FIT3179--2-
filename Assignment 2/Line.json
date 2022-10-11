@@ -1,45 +1,54 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {"text": "Number of orders by Region - USA (2020)", "fontSize": 16},
-    "width": 400,
-    "height": 400,
-    "data": {
-      "url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/Time%20line.csv"},
-    "layer": [
-      {
-        "mark": "line",
-        "encoding": {
-          "x": {
-            "timeUnit": {"unit": "yearmonth"},
-            "field": "Order Date",
-            "type": "temporal",
-            "axis": {
-              "title": "Date",
-              "tickCount": 5
-            }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Number of orders by Region - USA (2020)", "fontSize": 16},
+  "width": 700,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/Time%20line.csv"},
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "timeUnit": {"unit": "yearmonth"},
+          "field": "Order Date",
+          "type": "temporal",
+          "axis": {
+            "title": "Date",
+            "tickCount": 10
+          }
+        },
+        "y": {
+          "aggregate": "count", 
+          "field": "Price", 
+          "type": "quantitative",
+          "axis": {
+          "tickCount": 10,
+          "title": "Orders"}
           },
-          "y": {
-            "aggregate": "count", 
-            "field": "Price", 
-            "type": "quantitative",
-            "axis": {
-            "tickCount": 10,
-            "title": "Orders"}
-            },
-          "color": {"field": "Region", "type": "nominal"}
-        }
-      },
-      {
-        "mark": {"type": "point", "opacity": 1, "filled": false},
-        "encoding": {
-          "x": {
-            "timeUnit": {"unit": "yearmonth"},
-            "field": "Order Date",
-            "type": "temporal"
-          },
-          "y": {"aggregate": "count", "field": "Price", "type": "quantitative"},
-          "color": {"field": "Region", "type": "nominal"}
-        }
+        "color": {"field": "Region", "type": "nominal"}
       }
-    ]
-  }
+    },
+    {
+      "mark": {"type": "point", "opacity": 1, "filled": false},
+      "encoding": {
+        "x": {
+          "timeUnit": {"unit": "yearmonth"},
+          "field": "Order Date",
+          "type": "temporal"
+        },
+        "y": {"aggregate": "count", "field": "Price", "type": "quantitative"},
+        "color": {"field": "Region", "type": "nominal"},
+        "tooltip": [
+          {"field": "Region", "type": "nominal", "title": "Region"},
+          {
+            "aggregate": "count",
+            "field": "Price",
+            "type": "quantitative",
+            "title": "Total orders per month"
+          }
+        ]
+      }
+    }
+  ]
+}

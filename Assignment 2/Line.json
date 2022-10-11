@@ -21,7 +21,7 @@
           "y": {
             "aggregate": "count", 
             "field": "Price", 
-            "type": "categorical",
+            "type": "quantitative",
             "axis": {
             "tickCount": 10,
             "title": "Orders"}
@@ -37,7 +37,7 @@
             "field": "Order Date",
             "type": "temporal"
           },
-          "y": {"aggregate": "count", "field": "Price", "type": "categorical"},
+          "y": {"aggregate": "count", "field": "Price", "type": "quantitative"},
           "color": {"field": "Region", "type": "nominal"}
         }
       }

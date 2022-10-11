@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Number of orders by Region - USA (2020)",
     "width": 400,
-    "height": 600,
+    "height": 400,
     "data": {
       "url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/Time%20line.csv"},
     "layer": [

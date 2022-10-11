@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple pie chart with embedded data.",
+    "title": {"text": "Number of orders by Shipment method", "fontSize": 16},
     "data": {
       "url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/Shipment.csv"
     },
@@ -15,7 +16,14 @@
         "scale": {
           "domain": ["Standard Class", "First Class", "Second Class", "Same Day"],
           "range": ["#D6523C", "#F3E7C3", "#24769F","#c7c7c7"]
-        }}
+        }},
+        "tooltip": [
+          {"field": "Shipment method", "type": "nominal", "title": "Shipment method"},
+          {
+            "field": "Total Orders",
+            "type": "quantitative",
+            "title": "Total orders per year"
+          }
+        ]
     }
   }
-  

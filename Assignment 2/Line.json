@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Number of orders by Region - USA (2020)",
+    "width": 400,
+    "height": 600,
+    "data": {
+      "url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/Time%20line.csv"},
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "timeUnit": {"unit": "yearmonth"},
+            "field": "Order Date",
+            "type": "temporal",
+            "axis": {
+              "title": "Date",
+              "tickCount": 5
+            }
+          },
+          "y": {
+            "aggregate": "count", 
+            "field": "Price", 
+            "type": "ordinal",
+            "axis": {
+            "tickCount": 10,
+            "title": "Orders"}
+            },
+          "color": {"field": "Region", "type": "nominal"}
+        }
+      },
+      {
+        "mark": {"type": "point", "opacity": 1, "filled": false},
+        "encoding": {
+          "x": {
+            "timeUnit": {"unit": "yearmonth"},
+            "field": "Order Date",
+            "type": "temporal"
+          },
+          "y": {"aggregate": "count", "field": "Price", "type": "ordinal"},
+          "color": {"field": "Region", "type": "nominal"}
+        }
+      }
+    ]
+  }

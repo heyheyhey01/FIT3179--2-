@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple pie chart with embedded data.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/Shipment.csv"
+    },
+    "mark": "arc",
+    "encoding": {
+      "theta": {
+      "field": "Total Orders", 
+      "type": "quantitative"},
+      "color": {
+        "field": "Shipment method", 
+        "type": "nominal",
+        "scale": {
+          "domain": ["Standard Class", "First Class", "Second Class", "Same Day"],
+          "range": ["#D6523C", "#F3E7C3", "#24769F","#c7c7c7"]
+        }}
+    }
+  }
+  

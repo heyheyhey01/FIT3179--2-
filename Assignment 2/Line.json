@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Number of orders by Region - USA (2020)",
+    "title": {"text": "Number of orders by Region - USA (2020)", "fontSize": 16},
     "width": 400,
     "height": 400,
     "data": {

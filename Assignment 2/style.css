@@ -42,6 +42,11 @@ h1 {
   padding: 5, 5, 5, 5;
 }
 
+.pure-u {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .small-font {
   font-size: 14px;
 }

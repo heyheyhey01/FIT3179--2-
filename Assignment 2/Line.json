@@ -12,7 +12,7 @@
           "x": {
             "timeUnit": {"unit": "yearmonth"},
             "field": "Order Date",
-            "type": "ordinal",
+            "type": "temporal",
             "axis": {
               "title": "Date",
               "tickCount": 5
@@ -35,7 +35,7 @@
           "x": {
             "timeUnit": {"unit": "yearmonth"},
             "field": "Order Date",
-            "type": "ordinal"
+            "type": "temporal"
           },
           "y": {"aggregate": "count", "field": "Price", "type": "categorical"},
           "color": {"field": "Region", "type": "nominal"}

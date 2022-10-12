@@ -1,4 +1,5 @@
-{
+{   "name": "Product category",
+    "children": [
     {"name": "Furniture",
         "children":[
          {"name": "Furnishings", "value": 316},
@@ -27,6 +28,6 @@
          {"name": "Phones", "value": 294}
         ]}
      
-      
+    ]   
  }
     

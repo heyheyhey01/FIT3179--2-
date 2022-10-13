@@ -1,33 +1,88 @@
-{   "name": "Product category",
-    "children": [
-    {"name": "Furniture",
-        "children":[
-         {"name": "Furnishings", "value": 316},
-         {"name": "Chairs", "value": 190},
-         {"name": "Tables", "value": 104},
-         {"name": "Bookcases", "value": 76}
-        ]},  
-    {"name": "Office Supplies",
-        "children":[
-        {"name": "Appliances", "value": 165},
-        {"name": "Art", "value": 282},
-        {"name": "Binders", "value": 499},
-        {"name": "Envelopes", "value": 71}.
-        {"name": "Fasteners", "value": 63},
-        {"name": "Labels", "value": 114},
-        {"name": "Paper", "value": 459},
-        {"name": "Storage", "value": 288},
-        {"name": "Supplies", "value": 59}
-       ]
-     },
-     {"name": "Technology",
-        "children":[
-         {"name": "Accessories", "value": 275},
-         {"name": "Copiers", "value": 22},
-         {"name": "Machines", "value": 33},
-         {"name": "Phones", "value": 294}
-        ]}
-     
-    ]   
- }
+[
+    {
+        "Name": "Furnishings",
+        "Total Orders": 316,
+        "Product Category": "Furniture"
+    },
+    {
+        "Name": "Chairs",
+        "Total Orders": 190,
+        "Product Category": "Furniture"
+    },
+    {
+        "Name": "Tables",
+        "Total Orders": 104,
+        "Product Category": "Furniture"
+    },
+    {
+        "Name": "Bookcases",
+        "Total Orders": 76,
+        "Product Category": "Furniture"
+    },
+    {
+        "Name": "Appliances",
+        "Total Orders": 165,
+        "Product Category": "Office Supplies"
+    },
+    {
+        "Name": "Art",
+        "Total Orders": 282,
+        "Product Category": "Office Supplies"
+    },
+    {
+        "Name": "Binders",
+        "Total Orders": 499,
+        "Product Category": "Office Supplies"
+    },
+    {
+        "Name": "Envelopes",
+        "Total Orders": 71,
+        "Product Category": "Office Supplies"
+    },
+    {
+        "Name": "Fasteners",
+        "Total Orders": 63,
+        "Product Category": "Office Supplies"
+    },
+    {
+        "Name": "Labels",
+        "Total Orders": 114,
+        "Product Category": "Office Supplies"
+    },
+    {
+        "Name": "Paper",
+        "Total Orders": 459,
+        "Product Category": "Office Supplies"
+    },
+    {
+        "Name": "Storage",
+        "Total Orders": 288,
+        "Product Category": "Office Supplies"
+    },
+    {
+        "Name": "Supplies",
+        "Total Orders": 59,
+        "Product Category": "Office Supplies"
+    },
+    {
+        "Name": "Accessories",
+        "Total Orders": 275,
+        "Product Category": "Technology"
+    },
+    {
+        "Name": "Copiers",
+        "Total Orders": 22,
+        "Product Category": "Technology"
+    },
+    {
+        "Name": "Machines",
+        "Total Orders": 33,
+        "Product Category": "Technology"
+    },
+    {
+        "Name": "Phones",
+        "Total Orders": 294,
+        "Product Category": "Technology"
+    } 
+]
     

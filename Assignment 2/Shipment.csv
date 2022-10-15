@@ -1,5 +1,5 @@
 Shipment method,Total Orders,Year
-First Class,30,2020
-Same Day,10,2020
-Second Class,10,2020
-Standard Class,60,2020
+First Class,0.3,2020
+Same Day,0.1,2020
+Second Class,0.1,2020
+Standard Class,0.6,2020

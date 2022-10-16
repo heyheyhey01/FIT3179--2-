@@ -49,7 +49,9 @@
         "color": {
           "field": "Category", 
           "type": "nominal",
-          "scale": {"range": ["#FFE085", "#67BED0", "#F27E29"]},
+          "scale": {
+            "domain": ["Furniture", "Office Supplies", "Technology"],
+            "range": ["#FFE085", "#67BED0", "#F27E29"]},
           "title": "Product Category"},
         "tooltip": [
         {"field": "Segment", "type": "ordinal", "title": "Customer segment"},

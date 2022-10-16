@@ -9,7 +9,7 @@
       "field": "Order Date ",
       "timeUnit": "month",
       "title": "",
-      "type": "temporal"}},
+      "type": "ordinal"}},
   "layer": [
     {
       "encoding": {

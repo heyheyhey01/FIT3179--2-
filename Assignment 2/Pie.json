@@ -1,13 +1,18 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A simple pie chart with embedded data.",
-  "title": {"text": "Number of orders by Shipment method", "fontSize": 16},
-  "width": 300,
-  "height": 300,
+  "title": {"text": "Orders by Shipment method", "fontSize": 18, "font": "Open Sans", "dy": -20},
+  "width": 250,
+  "height": 250,
+  "padding": {"bottom": 20}, 
   "data": {
     "url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/Shipment.csv"
   },
-  "mark": "arc",
+  "transform": [
+    {"calculate": "datum.Year", "as": "inner_text"}
+  ],
+  "layer": [
+  {"mark": {"type": "arc", "innerRadius": 80},
   "encoding": {
     "theta": {
     "field": "Total Orders", 
@@ -17,17 +22,25 @@
       "type": "nominal",
       "scale": {
         "domain": ["Standard Class", "First Class", "Second Class", "Same Day"],
-        "range": ["#D6523C", "#F3E7C3", "#24769F","#c7c7c7"]
+        "range": ["#D6523C", "#FFE085", "#67BED0","#F27E29"]
       }},
       "tooltip": [
         {"field": "Shipment method", "type": "nominal", "title": "Shipment method"},
         {
           "field": "Total Orders",
           "type": "quantitative",
-          "title": "Total orders per year"
+          "title": "Proportion of Total orders per year",
+          "format": ".0%"
+          
         }
       ]
+  }
   },
+  {
+    "mark": {"type": "text", "fontSize": 25},
+              "encoding": {"text": {"field": "Year"}}
+  }
+  ],
   "config": {
     "view": {
       "stroke": "transparent"

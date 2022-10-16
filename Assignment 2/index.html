@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>United State E-commerce Record (2020)</title>
+  <title> United States E-commerce Record (2020)</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -26,7 +26,7 @@
 
 <body>
 
-  <div class="page">
+  <div class="page1">
 
     <!-- pure grid group <div class="pure-g">
       <div class="pure-u-1-1">
@@ -36,8 +36,32 @@
     
     <!-- end pure grid group -->
 
+    <h1>E-commerce Record During the Pandemic <br>
+      United States of America
+    </h1>
+    <div class="page2">
     <!-- pure grid group -->
-    <h1>United State E-commerce Record (2020)</h1>
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="description-1">
+          <p>
+            Has the Pandemic changed the way we shop ? <br>
+            Consumer behaviours 
+             have changed drastically since COVID-19. (2020)
+            More and more people are shifting to online shopping. 
+            E-commerce is growing at a fast rate.  </p>
+        </div>
+      </div>
+    <!-- end pure grid group -->
+
+  </div>
+</div>
+</div>
+
+
+  <div class="page">
+
+    <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-1">
         <div id="vis1" class="vis-container"></div>
@@ -48,24 +72,72 @@
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-2-3">
+        <div id="vis4" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description-right">
+          <h2>E-commerce Boom</h2>
+          <p>Geographically, it is clear that major states had higher order numbers. 
+             For example: New York, Texas, California, Washington. <br>
+             <br>
+             Over time, we can see a surge in online orders. In March, when lockdown starts,
+             a sharp increase in e-commerce sales.
+             As expected, sales went up the last quarter of the year due to holiday.
+             The number of orders was the highest in <b>September</b>.
+          </p>
+        </div>
+      </div>
+      </div>
+
+    </div>
+    <!-- end pure grid group -->
+  </div>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-2-3">
         <div id="vis2" class="vis-container"></div>
       </div>
       <div class="pure-u-1-3">
         <div class="description-right">
-          <p>The first and second columns are combined. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
-            faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+          <h2>Change in Demand</h2>
+          <p>Average consumer was still the number one customer segment. 
+            However, as the pandemic kept people at home to work and study, 
+            Home Office rose to become a big customer segment. 
+            Consequently, majority of orders was <b>Office Supplies </b>.
+
+          </p>
+          <p2>Note: Click on the legend to filter</p2>
         </div>
       </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div id="vis5" class="vis-container"></div>
+      </div>
+      </div>
+
+    <!-- end pure grid group -->  
 
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div class="description description-left">
-          <p>The first column contains text and the second column contains a visualisation.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. </p>
+        <div class="description-left">
+          <h2>Saving costs while shopping online</h2>
+          <p> 
+            Even though spending on online purchases increased, people still chose 
+            to save cost through shipping costs. <b>Standard Class </b>
+            shipment method was the most popular choice, while <b>Same Day </b>
+            was the least popular. 
+          </p>
+          <img src="https://user-images.githubusercontent.com/111416208/196010670-e9108a58-5cfe-4d67-b544-7156075416b7.jpg" alt="Dinosaur" 
+          width="200"
+          height="150"
+          class="center"/>
         </div>
       </div>
       <div class="pure-u-1-2">
@@ -73,22 +145,14 @@
       </div>
 
     </div>
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div id="vis4" class="vis-container"></div>
-      </div>
-      </div>
-
-    </div>
-    
+    <!-- end pure grid group -->
 
   <script type="text/javascript">
     var specVis1 = "./map.json";
     var specVis2 = "./bar.json";
     var specVis3 = "./Pie.json";
-    var specVis4 = "./Line.json"
+    var specVis4 = "./Line 2.json";
+    var specVis5 = "./treemap.json"
 
     vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -103,6 +167,10 @@
     }).catch(console.error);
 
     vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
 

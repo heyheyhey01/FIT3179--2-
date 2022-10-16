@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "United State E-commerce Record by State (2020)", "fontSize": 16},
-  "width": 750,
+  "title": {"text": "United State E-commerce Record by State (2020)", "fontSize": 18, "font": "Open Sans"},
+  "width": 900,
   "height": 400,
   "background": "white",
   "projection": {"type": "albersUsa"},
@@ -29,6 +29,24 @@
       "encoding": {"tooltip": {"field": "note"}}
     },
     {
+     "mark": {
+                "type": "text",
+                "font": "Open Sans",
+                "x": 750,
+                "y": 150,
+                "color": "#323232",
+                "fontSize": 13,
+                "fontWeight": 100,
+                "opacity": 0.05,
+                "align": "left"
+            },
+            "encoding": {
+                "text": {
+                    "value": ["Major states such as", "New York has a", "high number of orders"]
+                }
+            } 
+    },
+    {
       "transform": [
         {
           "lookup": "properties.name",
@@ -53,8 +71,12 @@
           "scale": {
             "type": "threshold",
             "domain": [0.5, 1, 1.5],
-            "range": ["#edf8e9", "#bae4b3", "#74c476", "#238b45"]
-          }
+            "range": ["#C2E5EC", "#95D2DE", "#67BED0", "#5DABBB"]
+          },
+         "legend":{
+        "orient": "bottom-left",
+        "direction": "horizontal",
+        "title": "Orders by 100,000 population"} 
         },
         "tooltip": [
           {"field": "properties.name", "type": "nominal", "title": "State"},
@@ -62,15 +84,13 @@
             "field": "Orders per 100,000 population",
             "type": "quantitative",
             "format": ".2f",
-            "title": "Total Orders per 100,000 population"
+            "title": "Orders per 100,000 population (per year)"
           }
         ]
       }
     }
   ],
   "config": {
-    "view": {
-      "stroke": "transparent"
-    }
+    "view": {"stroke": "transparent"}
   }
 }

@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Total Order through time (2020)", "fontSize": 16},
+  "title": {"text": "Total orders through time (2020)", "fontSize": 18, "font": "Open Sans"},
   "data": {"url": "https://raw.githubusercontent.com/heyheyhey01/FIT3179--2-/main/Assignment%202/Line%203.csv"},
-  "width": 400,
+  "width": 450,
   "height": 300,
   "encoding": {
     "x": {
@@ -13,7 +13,10 @@
   "layer": [
     {
       "encoding": {
-        "color": {"field": "Region", "type": "nominal"},
+        "color": {
+          "field": "Region", 
+          "type": "nominal",
+          "scale": {"range": ["#D6523C", "#FFE085", "#67BED0","#F27E29"]}},
         "y": {"field": "Total Orders", "type": "quantitative"}
       },
       "layer": [

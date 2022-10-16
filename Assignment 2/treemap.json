@@ -1,0 +1,141 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": {"text": "Product Category", "fontSize": 18, "font": "Open Sans"},
+  "width": 900,
+  "height": 400,
+  "padding": {"bottom": 10},
+  "autosize": "fit",
+  "data": [
+    {
+      "name": "tree",
+      "values": [
+        {"id": ".", "parent": null},
+        {"id": "Furniture", "parent": "."},
+        {"id": "Furnishings", "parent": "Furniture", "value": 306},
+        {"id": "Chairs", "parent": "Furniture", "value": 180},
+        {"id": "Tables", "parent": "Furniture", "value": 114},
+        {"id": "Lights", "parent": "Furniture", "value": 96},
+        {"id": "Office Supplies", "parent": "."},
+        {"id": "Technology", "parent": "."},
+        {"id": "Laptop", "parent": "Technology", "value": 135},
+        {"id": "Copiers", "parent": "Technology", "value": 162},
+        {"id": "Tools", "parent": "Technology", "value": 123},
+        {"id": "Phones", "parent": "Technology", "value": 204},
+        {"id": "Appliances", "parent": "Office Supplies", "value": 165},
+        {"id": "Art", "parent": "Office Supplies", "value": 282},
+        {"id": "Binders", "parent": "Office Supplies", "value": 499},
+        {"id": "Ink", "parent": "Office Supplies", "value": 71},
+        {"id": "USB", "parent": "Office Supplies", "value": 63},
+        {"id": "Labels", "parent": "Office Supplies", "value": 114},
+        {"id": "Paper", "parent": "Office Supplies", "value": 399},
+        {"id": "Storage", "parent": "Office Supplies", "value": 158},
+        {"id": "Supplies", "parent": "Office Supplies", "value": 249}
+      ]
+    },
+    {
+      "name": "treemap",
+      "source": "tree",
+      "transform": [
+        {"type": "stratify", "key": "id", "parentKey": "parent"},
+        {
+          "type": "treemap",
+          "field": "value",
+          "size": [{"signal": "width"}, {"signal": "height"}]
+        }
+      ]
+    },
+    {
+      "name": "nodes",
+      "source": "treemap",
+      "transform": [{"type": "filter", "expr": "datum.children"}]
+    },
+    {
+      "name": "leaves",
+      "source": "treemap",
+      "transform": [{"type": "filter", "expr": "!datum.children"}]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "color",
+      "orient": "bottom",
+      "direction": "horizontal",
+      "title": "Product Category"
+    }
+  ],
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "nodes", "field": "id"},
+      "range": ["#FFFFFF", "#FFE085", "#67BED0", "#F27E29"]
+    },
+    {
+      "name": "size",
+      "type": "ordinal",
+      "domain": [0, 1, 2, 3],
+      "range": [256, 28, 20, 14]
+    },
+    {
+      "name": "opacity",
+      "type": "ordinal",
+      "domain": [0, 1, 2, 3],
+      "range": [0.15, 0.5, 0.8, 1]
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": {"data": "nodes"},
+      "interactive": false,
+      "encode": {
+        "enter": {"fill": {"scale": "color", "field": "id"}},
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"}
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {"data": "leaves"},
+      "encode": {
+        "enter": {
+          "stroke": {"value": "#fff"},
+          "tooltip": {"signal": "{'Total Orders per Year': datum.value}"}
+        },
+        "update": {
+          "x": {"field": "x0"},
+          "y": {"field": "y0"},
+          "x2": {"field": "x1"},
+          "y2": {"field": "y1"},
+          "fill": {"value": "transparent"}
+        },
+        "hover": {"fill": {"value": "grey"}}
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "leaves"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "font": {"value": "Arial"},
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "fill": {"value": "#000"},
+          "text": {"field": "id"},
+          "fontSize": {"scale": "size", "field": "depth"},
+          "fillOpacity": {"scale": "opacity", "field": "depth"}
+        },
+        "update": {
+          "x": {"signal": "0.5 * (datum.x0 + datum.x1)"},
+          "y": {"signal": "0.5 * (datum.y0 + datum.y1)"}
+        }
+      }
+    }
+  ],
+  "config": {}
+}

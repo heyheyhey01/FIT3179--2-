@@ -76,7 +76,7 @@
          "legend":{
         "orient": "bottom-left",
         "direction": "horizontal",
-        "title": "Orders by 100,000 population"} 
+        "title": "Orders per 100,000 population"} 
         },
         "tooltip": [
           {"field": "properties.name", "type": "nominal", "title": "State"},
